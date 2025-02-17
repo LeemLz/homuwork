@@ -23,9 +23,9 @@ Private Sub Winsock1_DataArrival(ByVal bytesTotal As Long)
 	If Info <> Chr$(ACK) Then    //ACK ES LA SEÑAL DE RECONOCIMIENTO STANDARD, POR ESO EL SER DISTINTO DE ACK IMPLICA QUE HEMOS RECIBIDO INFORMACION VALIDA (INFO) Y POR ENDE PODEMOS PROCESARLA
 
             //Envia datos ACK
-		Winsock1.SendData Chr$(ACK)  //CONFIRMA LA RECEPCION DE LOS DATOS 
+		Winsock1.SendData Chr$(ACK)  //CONFIRMA LA RECEPCION DE LOS DATOS AL SERVIDOR 
             
-		pesoEstable = RecPeso_IS30_RED(Info)
+		pesoEstable = RecPeso_IS30_RED(Info) //PROCESA LOS DATOS CON LA FUNCION
     
 		pesoEstable = PintaPesoST_Estable()
 		CalculaEstadoCanalEstable True
