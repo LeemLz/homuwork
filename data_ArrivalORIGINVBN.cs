@@ -25,9 +25,10 @@ Private Sub Winsock1_DataArrival(ByVal bytesTotal As Long)
             //Envia datos ACK
 		Winsock1.SendData Chr$(ACK)  //CONFIRMA LA RECEPCION DE LOS DATOS AL SERVIDOR 
             
-		pesoEstable = RecPeso_IS30_RED(Info) //PROCESA LOS DATOS CON LA FUNCION
+		pesoEstable = RecPeso_IS30_RED(Info) //Esta función procesa los datos recibidos (Datos) y determina si el peso recibido es estable. LOS GUARDA EN GBLPESO
     
 		pesoEstable = PintaPesoST_Estable()
+		
 		CalculaEstadoCanalEstable True
         
             //TrataEstadoCanal
@@ -38,5 +39,7 @@ Private Sub Winsock1_DataArrival(ByVal bytesTotal As Long)
  
 
 End Sub
+
+
 
 
